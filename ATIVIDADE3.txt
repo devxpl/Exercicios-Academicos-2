@@ -1,0 +1,80 @@
+Algoritmo "calculoidadeAluno"
+
+      var 
+         anoatual, anonascimento, idade: inteiro
+
+inicio 
+     
+    escreval ("informe o Ano atual:")
+    leia (anoatual)
+    escreval ("informe o ano de nascimento")
+    leia (anonascimento)
+    
+    idade <- 2019 - 1982
+    
+    escreva (" A idade do aluno é",idade)
+
+R : A VARIAVEL idade armazena a idade do Aluno. mais não mostra para o usuario na tela pois não foi declarada no algoritmo: escreva (" a idade do aluno é:",idade) .
+
+--------------------------------------------------------------------
+
+Algoritmo "mostranumero"
+   
+
+    var 
+       a,b,c:inteiro
+
+inicio
+     
+     a<- 32
+     b<- 28
+     c<- 0
+
+    para c de 1 até 4 passa 1 faça
+      a <-a -1
+      b <-b +1
+      escreva (" ",a)
+      escreva (" ",b)
+
+    fimpara
+
+fimalgoritmo
+R: 31 29 30 30 29 31 28 32
+------------------------------------------------------------------------
+
+Algoritmo "media"
+
+   var
+    nota1, nota2, nota3, media:real
+
+inicio
+
+     escreval ("Digite o valor da nota das 3 ultimas provas :")
+     leia (nota1,nota2,nota3)
+
+         media <- nota1+nota2+nota3
+         media <- (media)/3
+
+      Se (media >=8) então
+           escreval (" Aprovado direto com conceito A.")
+         
+       Senao
+         se (media >=6) entao
+           escreval ("Aprovado direto com ressalvas,conceito B.")
+
+       Senao
+         se (media > 4) então
+           escreval ("exame!!!.")
+       Senao
+          escreval ("Reprovado por media.")
+         fimse
+         se (media < 4 ) então
+          escreval (" Devido a está nota, sua matricula está liberada para transferencia.",media)
+     fimse
+   fimse
+
+fimalgoritmo
+
+
+R:   Escreva ("Aprovado direto com ressalvas, conceito B.")
+----------------------------------------------------------------------------

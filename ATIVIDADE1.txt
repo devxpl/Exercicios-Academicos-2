@@ -1,0 +1,49 @@
+Algoritmo "consumoapartamentos"
+
+Var
+   N_ap :inteiro
+   m_consumo,consumo :real
+
+
+
+Inicio
+   N_ap <- 0
+   m_consumo <- 0
+   consumo <- 0
+
+
+
+   escreva (" Digite a quantidade de apartamentos : " )
+   leia (N_ap)
+   
+   
+   Se (N_ap = 0 ) entao
+      escreval (" Digite uma quantidade de apartamento valido Exemplo : 1 ,2 , 3")
+   fimse
+
+   Enquanto (N_ap <> 0) faça
+
+      escreval ("Digite o consumo em litros de cada Apartamento: ")
+      leia (consumo)
+
+      se (consumo > 0 ) e (m_consumo < consumo ) então
+         m_consumo <- consumo
+      fimse
+
+      N_ap <- N_ap -1
+
+      faça (consumo = -1) ou (N_ap = 0 )
+
+   FimEnquanto
+
+
+   Se (m_consumo > 0) então
+      escreval (" Maior consumo de agua foi de : ", m_consumo /1000, " metro(s) cubico(s) de agua.")
+   senão
+      escreval ("o programa será encerrado tente novamente")
+   fimse
+
+
+
+
+fimalgoritmo

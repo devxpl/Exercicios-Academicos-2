@@ -1,0 +1,60 @@
+algoritmo "calculotrajeto"
+
+var
+       media_lt_km:real
+       maxima_lt_tk:real
+       km_planejado:real
+       km_alternativo:real
+       comb_existente:real
+       soma:real
+       m_segur:real
+       q_combustivel:real
+       r_combustivel:real
+       total:real
+
+inicio
+
+      escreval("Informe a media da aeronave em litros por KM : ")
+       leia(media_lt_km)
+      
+      escreval("Informe a Capacidade máxima em litros do tanque : ")
+       leia(maxima_lt_tk)
+      
+      escreval("Informe a Quantidade de KM do trecho planejado : ")
+       leia(km_planejado)
+      
+      escreval("Informe a Quantidade de KM do trecho alternativo : ")
+       leia(km_alternativo)
+      
+      escreval("Informe a Quantidade de Combustivel existente na aeronave : ")
+       leia(comb_existente)
+       
+      
+           soma          <- (km_planejado + km_alternativo)
+           m_segur       <- (soma)*30/100
+           q_combustivel <- (soma + m_segur)*media_lt_km
+           r_combustivel <- (q_combustivel - comb_existente)
+           total         <- (soma + m_segur)
+
+   se (q_combustivel > maxima_lt_tk ) entao
+    escreval("==== TRAJETO NEGADO  ====")
+    escreval("==== TANQUE NAO SUPORTA ====")
+
+   senao ( q_combustivel < maxima_lt_tk) entao
+    escreval("==== TRAJETO CONFIRMADO ====")
+    escreval("==== TRAJETO TOTAL + MARGEM SEGURANÇA : ",total)
+    escreval("==== COMBUSTIVEL NECESSARIO :",q_combustivel)
+   fimse
+
+    se (q_combustivel > comb_existente) entao
+      escreval("==== QUANTIDADE MAXIMA DE COMBUSTIVEL DO TANQUE :",maxima_lt_tk)
+    fimse
+    
+    se ( comb_existente < q_combustivel) entao
+      escreval("==== ABASTECER :",r_combustivel)
+      
+    senao(comb_existente > q_combustivel) entao
+      escreval("==== COMBUSTIVEL EXISTENTE É O SUFICIENTE PARA VIAGEM ====")
+    fimse
+    
+ fimalgoritmo

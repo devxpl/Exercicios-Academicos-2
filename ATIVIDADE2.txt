@@ -1,0 +1,39 @@
+Algoritmo "contabilidade"
+
+
+
+var
+    htrabalhadas, vhoras, sbruto, inss :real
+    fgts, sliquido:real
+    sextra, dextra:real
+
+    
+inicio
+
+   sextra <- sextra * 1,5
+   dextra <- dextra * 2,0
+  
+
+    escreval (" Informe o valor de horas trabalhadas :")
+    Leia (htrabalhadas)
+    escreval (" Informe o valor de horas Extras aos Sabados")
+    Leia (sextra)
+    escreval ("informe o valor de horas Extras aos Domingos")
+    Leia (dextra)
+    escreval ("informe o valor da hora do funcionario")
+    Leia (vhoras)
+    
+    sbruto <- htrabalhadas * vhoras
+    sbruto <- sbruto + sextra + dextra
+    inss   <- sbruto * (9/100)
+    fgts   <- sbruto * (8/100)
+    sliquido <- sbruto - inss
+    
+
+     escreval (" valor do salario bruto é",sbruto)
+     escreval (" valor do salario Liquido é",sliquido)
+     escreval (" O inss é",inss)
+     escreval (" O fgts é",fgts)
+     
+fimalgoritmo
+  
